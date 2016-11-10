@@ -1,0 +1,1 @@
+docker build --rm -t wangpeibin713/zeppelin:0.6.2 .

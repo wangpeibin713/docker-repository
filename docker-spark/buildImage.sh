@@ -1,0 +1,1 @@
+docker build --rm -t wangpeibin713/spark:2.0.1 .
