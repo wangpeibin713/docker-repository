@@ -15,6 +15,11 @@ ENV PATH /usr/local/conda/bin:$PATH
 
 RUN /usr/local/conda/bin/conda install jupyter -y --quiet
 
+RUN conda install -c conda-forge -y jupyter_contrib_nbextensions
+RUN jupyter nbextensions_configurator enable --user
+RUN jupyter contrib nbextension install --user
+RUN pip install --upgrade pip
+RUN pip install plotly
 #COPY /etc/bootstrap.sh /etc/bootstrap-zeppelin.sh
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
