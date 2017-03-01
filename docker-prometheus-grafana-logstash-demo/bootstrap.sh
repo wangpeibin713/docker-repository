@@ -8,5 +8,4 @@ cd /root/alertmanager-0.5.1.linux-amd64/ && nohup ./alertmanager -config.file=al
 cd /root/notification-server/ && nohup java -jar notification-server-0.0.1-SNAPSHOT.jar &
 cd /root/prometheus-1.5.0.linux-amd64/ && nohup ./prometheus -config.file=./prometheus.yml -storage.local.path=/prometheus -web.console.libraries=/usr/share/prometheus/console_libraries -web.console.templates=/usr/share/prometheus/consoles &
 
-/bin/bash
-
+/usr/sbin/sshd -D

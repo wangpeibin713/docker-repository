@@ -65,4 +65,4 @@ RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
 VOLUME     [ "/root" ]
 WORKDIR    /prometheus
-ENTRYPOINT ["/etc/bootstrap.sh"]
+CMD ["/etc/bootstrap.sh"]
