@@ -1,0 +1,7 @@
+ALERT LogStashNoEventsIn
+  IF delta(pipeline_events_in[1m]) < 10
+  FOR 1m
+  ANNOTATIONS {
+    summary = "no event input for {{ $labels.instance }}",
+    description = "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)",
+  }

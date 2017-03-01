@@ -6,8 +6,11 @@ COPY zeppelin-0.6.2-bin-all.tgz /usr/local/zeppelin-0.6.2-bin-all.tgz
 RUN cd /usr/local && tar -xzf zeppelin-0.6.2-bin-all.tgz
 RUN cd /usr/local && ln -s zeppelin-0.6.2-bin-all zeppelin
 
+COPY interpreter.json /usr/local/zeppelin/conf/interpreter.json
+
 # update boot script
 #COPY /etc/bootstrap.sh /etc/bootstrap-spark.sh
+
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
